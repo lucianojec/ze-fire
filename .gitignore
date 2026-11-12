@@ -1,0 +1,29 @@
+# Godot editor and imported cache
+.godot/
+.import/
+
+# Exported builds and temporary output
+build/
+exports/
+exported/
+
+# Local export credentials and private editor data
+.godot/export_credentials.cfg
+
+# Godot logs and crash dumps
+*.godot.log
+*.dmp
+
+# IDE and operating system files
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary and backup files
+*.tmp
+*.temp
+*.bak
+*~

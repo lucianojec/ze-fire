@@ -15,7 +15,7 @@ Protótipo 3D pequeno feito com Godot 4.x e GDScript. O mapa, o boneco palito, a
 - **WASD:** andar.
 - **Ctrl:** correr.
 - **Espaço:** pular.
-- **Mouse:** olhar; o cursor fica capturado durante o jogo.
+- **Mouse:** olhar; no PC o cursor é capturado ao iniciar. Na versão Web, clique no jogo para capturá-lo; **Esc** libera ou recaptura o cursor.
 - **Shift:** alternar Shift Lock.
 - **Botão esquerdo do mouse:** atirar (segure para disparo automático do rifle).
 - **E:** pegar a arma mais próxima.
@@ -50,7 +50,8 @@ Godot 4 pode exportar para Web em navegadores compatíveis. Instale os templates
 
 ## Testes e limitações conhecidas
 
-- A sintaxe dos seis scripts GDScript foi validada com o parser `gdparse`; todas as referências `res://` também foram verificadas.
-- Não foi possível executar o projeto nem validar as cenas no editor nesta máquina: o executável Godot não está disponível no ambiente.
-- A execução real no PC, a colisão da câmera, a coleta/alternância/tiros, respawn dos alvos e o comportamento dos controles touch ainda precisam ser testados no Godot.
-- A exportação Windows, Android e Web não foi gerada neste ambiente.
+- A sintaxe dos scripts GDScript foi validada com `gdparse`; as referências `res://` foram verificadas.
+- O projeto foi aberto e executado pelo Godot 4.7.2 em modo headless, sem erros de inicialização.
+- A exportação Web foi gerada e carregada no navegador; a cena e o HUD renderizaram sem erros JavaScript.
+- A movimentação/interação em jogo e os controles touch em um celular ainda precisam de teste manual.
+- A exportação Windows e Android não foi gerada; somente a exportação Web foi testada.

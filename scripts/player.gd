@@ -37,7 +37,7 @@ func _ready() -> void:
 	camera_pivot.rotation.x = pitch
 	camera_yaw = rotation.y
 	_sync_camera_yaw()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if OS.has_feature("web") else Input.MOUSE_MODE_CAPTURED
 	weapon_changed.emit("Sem arma")
 
 
@@ -45,6 +45,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		_rotate_camera(event.relative)
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed and OS.has_feature("web") and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		firing = event.pressed
 		if firing and equipped_weapon == "pistol":
 			_try_fire()
